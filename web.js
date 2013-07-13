@@ -1,12 +1,9 @@
-var express = require('express');
+var http = require("http");
 
-var app = express.createServer(express.logger());
+// create a server
+http.createServer(function(req, res)
+{
+var fs = require('fs');
 
-app.get('/', function(request, response) {
-  response.send('Hello World!');
-});
-
-var port = process.env.PORT || 5000;
-app.listen(port, function() {
-  console.log("Listening on " + port);
-});
+res.end("Hello world 2");
+}).listen(process.env.PORT, process.env.IP);
